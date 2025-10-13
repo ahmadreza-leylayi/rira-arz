@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function ConverterPage() {
   return (
-    <div className="bg-[url('/bg.png')] min-h-screen p-8 justify-center items-center flex ">
-      <div className="mx-auto max-w-3xl flex w-[80%]">
+    <div className="bg-[url('/bg.png')] w-full h-screen p-8 justify-center items-center flex ">
+      <div className="mx-auto max-w-3xl flex w-[90%]">
         <ConverterManual />
       </div>
     </div>

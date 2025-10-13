@@ -30,9 +30,9 @@ export default function ConverterManual() {
   }, [amount, rate, direction]);
 
   return (
-    <div className="mx-auto max-w-md rounded-lg border bg-gray-700 p-6 shadow-sm h-[50%] w-[50%]">
-      <h2 className="mb-4 text-center text-xl font-semibold text-white">
-        مبدّل دلار ↔ ریال
+    <div className="mx-auto max-w-md rounded-lg border bg-gray-700 p-6 shadow-sm h-[90%] w-[95%]">
+      <h2 className="mb-4 text-center text-xl font-semibold text-white  flex-nowrap">
+        مبدل دلار ↔ ریال
       </h2>
 
       <label className="mb-3 block ">
