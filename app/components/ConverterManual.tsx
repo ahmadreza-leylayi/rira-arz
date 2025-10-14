@@ -144,7 +144,7 @@ export default function ConverterManual() {
           {isNaN(result) ? (
             <p className="text-red-400 text-sm font-medium">ورودی نامعتبر</p>
           ) : (
-            <p className="text-xl font-bold text-white font-mono">
+            <p className="text-xl font-bold text-white font-mono break-all">
               {formatDisplayNumber(result)}{" "}
               <span className="text-blue-300">
                 {direction === "USD_TO_IRR" ? "ریال" : "دلار"}
