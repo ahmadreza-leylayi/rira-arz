@@ -69,7 +69,10 @@ export default function ConverterManual() {
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* 🔹 تصاویر متحرک بالا و پایین */}
-      <ConverterImages direction={direction} />
+   
+        <ConverterImages  direction={direction}  />
+      
+      
 
       {/* 🔹 محتوای اصلی (کادر مبدل) */}
       <motion.div

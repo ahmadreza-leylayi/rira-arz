@@ -11,7 +11,7 @@ export default function ConverterImages({ direction }: Props) {
   const isUsdToIrr = direction === "USD_TO_IRR";
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex flex-col justify-baseline mt-18 ">
+    <div className="relative w-full h-screen overflow-hidden hidden flex-col justify-baseline mt-18 md:flex">
       <AnimatePresence mode="wait">
         {/* بخش بالایی */}
         <motion.div
@@ -27,7 +27,7 @@ export default function ConverterImages({ direction }: Props) {
             alt="currency"
             fill
             priority
-            className=" object-fill !w-35 !h-35 mt-40 rounded-full"
+            className=" object-fill   !w-35 !h-35 mt-40 rounded-full "
           />
         </motion.div>
       </AnimatePresence>
