@@ -13,7 +13,6 @@ export default function ConverterImages({ direction }: Props) {
   return (
     <div className="relative w-full h-screen overflow-hidden hidden flex-col justify-baseline mt-18 md:flex">
       <AnimatePresence mode="wait">
-        {/* بخش بالایی */}
         <motion.div
           key={isUsdToIrr ? "dollar-top" : "rial-top"}
           initial={{ y: -200, opacity: 0 }}
@@ -33,7 +32,6 @@ export default function ConverterImages({ direction }: Props) {
       </AnimatePresence>
 
       <AnimatePresence mode="wait">
-        {/* بخش پایینی */}
         <motion.div
           key={isUsdToIrr ? "rial-bottom" : "dollar-bottom"}
           initial={{ y: 200, opacity: 0 }}

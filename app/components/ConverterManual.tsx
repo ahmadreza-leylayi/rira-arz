@@ -11,41 +11,33 @@ export default function ConverterManual() {
   const [amount, setAmount] = useState<string>("0");
   const [rate, setRate] = useState<string>("1,110,000");
 
-  // تابع فرمت کردن اعداد با جداکننده هزارگان
   const formatNumberWithCommas = (value: string): string => {
-    // حذف همه کاماها و کاراکترهای غیر عددی به جز نقطه
     const numericValue = value.replace(/[^\d.]/g, '');
     
-    // جدا کردن قسمت اعشاری
     const parts = numericValue.split('.');
     let integerPart = parts[0];
     const decimalPart = parts[1] ? `.${parts[1]}` : '';
     
-    // فرمت کردن قسمت صحیح با جداکننده هزارگان
     integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     
     return integerPart + decimalPart;
   };
 
-  // تابع تبدیل رشته فرمت شده به عدد
   const parseFormattedNumber = (value: string): number => {
     const numericValue = value.replace(/,/g, '');
     return parseFloat(numericValue) || 0;
   };
 
-  // هندلر تغییر مقدار amount
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formattedValue = formatNumberWithCommas(e.target.value);
     setAmount(formattedValue);
   };
 
-  // هندلر تغییر مقدار rate
   const handleRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formattedValue = formatNumberWithCommas(e.target.value);
     setRate(formattedValue);
   };
 
-  // تابع فرمت سه‌رقمی برای نمایش نتیجه
   const formatDisplayNumber = (value: number): string => {
     if (value < 0 || isNaN(value)) return "Invalid";
     const parts = value.toString().split(".");
@@ -55,7 +47,6 @@ export default function ConverterManual() {
     return formattedInt + decimalPart;
   };
 
-  // محاسبه نتیجه تبدیل
   const result = useMemo(() => {
     try {
       const amountNum = parseFormattedNumber(amount);
@@ -68,13 +59,11 @@ export default function ConverterManual() {
 
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* 🔹 تصاویر متحرک بالا و پایین */}
    
         <ConverterImages  direction={direction}  />
       
       
 
-      {/* 🔹 محتوای اصلی (کادر مبدل) */}
       <motion.div
         key={direction}
         initial={{ opacity: 0, scale: 0.95, y: 30 }}
@@ -87,7 +76,6 @@ export default function ConverterManual() {
           مبدل دلار ↔ ریال
         </h2>
 
-        {/* انتخاب نوع تبدیل */}
         <label className="mb-4 block">
           <span className="mb-2 block text-sm font-medium text-white/90">نوع تبدیل</span>
           <select
@@ -100,7 +88,6 @@ export default function ConverterManual() {
           </select>
         </label>
 
-        {/* مقدار ورودی */}
         <label className="mb-4 block">
           <span className="mb-2 block text-sm font-medium text-white/90">
             مقدار ({direction === "USD_TO_IRR" ? "دلار" : "ریال"})
@@ -116,7 +103,6 @@ export default function ConverterManual() {
           />
         </label>
 
-        {/* نرخ دلار */}
         <label className="mb-4 block">
           <span className="mb-2 block text-sm font-medium text-white/90">
             نرخ دلار (ریال برای هر دلار)
@@ -132,7 +118,6 @@ export default function ConverterManual() {
           />
         </label>
 
-        {/* نمایش نتیجه */}
         <motion.div
           key={result + direction}
           initial={{ opacity: 0, y: 10 }}
