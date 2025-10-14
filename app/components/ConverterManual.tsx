@@ -81,7 +81,7 @@ export default function ConverterManual() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: -30 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="absolute z-10 mx-auto max-w-md rounded-xl bg-gray-900/90 backdrop-blur-md border border-gray-600 text-white p-6 shadow-2xl w-[90%] sm:w-[70%] md:w-[50%]"
+        className="absolute z-10 mx-auto max-w-md rounded-xl bg-black/40 backdrop-blur-md border border-gray-600 text-white p-6 shadow-2xl w-[90%] sm:w-[70%] md:w-[50%]"
       >
         <h2 className="mb-6 text-center text-2xl font-bold text-white">
           مبدل دلار ↔ ریال
@@ -138,7 +138,7 @@ export default function ConverterManual() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-6 rounded-xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 p-4 text-center backdrop-blur-sm"
+          className="mt-6 rounded-xl bg-gradient-to-r from-black-600/20 to-gray-700/80 border border-blue-500/30 p-4 text-center backdrop-blur-sm"
         >
           <p className="text-sm text-blue-300 mb-2 font-medium">نتیجه تبدیل</p>
           {isNaN(result) ? (
