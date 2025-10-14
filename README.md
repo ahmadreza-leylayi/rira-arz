@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### **توضیح کلی**
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+این پروژه  مبدل دستی ساده  که با Next.js نوشته شه.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+هدفش اینه که کاربر بتونه خیلی راحت مقدار دلار یا ریال رو وارد کنه، نرخ تبدیل رو بزنه، و نتیجه رو با یه ظاهر تمیز و ساده ببینه.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+همه‌چیز با Framer Motion انیمیت شده و با Tailwind CSS استایل گرفته.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 
 
-## Deploy on Vercel
+### **تکنولوژی‌ها**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Next.js 15 (App Router) برای ساختار کلی و رندر سمت کلاینت
+
+
+
+React Hooks مثل useState و useMemo برای مدیریت داده‌ها
+
+
+
+Framer Motion برای انیمیشن‌ها
+
+
+
+Tailwind CSS برای طراحی 
+
+
+
+TypeScript برای نظم دادن به نوع داده‌ها
+
+
+
+
+
+### 
+
+### **توضیح فایل‌ها :**
+
+
+
+######  **ConverterManual.tsx**
+
+
+
+اصلی‌ترین کامپوننت پروژه است.
+
+
+
+اینجا من منطق مبدل رو نوشتم، مثل:
+
+
+
+انتخاب جهت تبدیل (دلار ↔ ریال)
+
+
+
+وارد کردن مقدار و نرخ
+
+
+
+محاسبه نتیجه 
+
+
+
+با Framer Motion هم انیمیشن‌های ورود و تغییر حالت‌ها ساخته شدن تا UI حس زنده‌تری بده.
+
+
+
+######  **ConverterImages.tsx**
+
+
+
+یه کامپوننت برای انیمیشن‌های پس‌زمینه‌ست.
+
+چندتا المان متحرک داره که بالا و پایین صفحه حرکت می‌کنن و به کل پروژه یه حس داینامیک می‌دن.
+
+کاملاً با motion.div نوشته شده تا سبک و نرم باشه.
+
+
+
+######  **convert.ts**
+
+
+
+تابع اصلی محاسبه توی این فایل قرار داره.
+
+فقط یه تابع ساده‌ست که بر اساس نوع تبدیل (USD\_TO\_IRR یا IRR\_TO\_USD) مقدار جدید رو حساب می‌کنه
+
+
+
+
+
+######  **types.ts**
+
+
+
+یه نوع ساده تعریف کردم برای جهت تبدیل تا TypeScript بدون اشتباه بتونه نوع ورودی‌ها رو کنترل کنه
+
+
+
+
+
+
+
+و لازم میدونم بگم در مسیر ساخت و ایده پردازی از هوش مصنوعی هم کمک گرفته شده.
+
+
+
+با تشکر🍀
+
