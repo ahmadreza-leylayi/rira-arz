@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-
+import {ConversionDirection} from "../lib/types";
 type Props = {
-  direction: "USD_TO_IRR" | "IRR_TO_USD";
+  direction: ConversionDirection; 
 };
 
 export default function ConverterImages({ direction }: Props) {
   const isUsdToIrr = direction === "USD_TO_IRR";
 
   return (
-    <div className="relative w-full h-screen overflow-hidden hidden flex-col justify-baseline mt-18 md:flex">
+    <div className="relative w-full h-screen overflow-hidden hidden flex-col  justify-center mt-18 md:flex gap-[400px] mb-90 opacity-[95%]">
       <AnimatePresence mode="wait">
         <motion.div
           key={isUsdToIrr ? "dollar-top" : "rial-top"}
@@ -19,14 +19,14 @@ export default function ConverterImages({ direction }: Props) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 200, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="flex-1 relative"
+          className=" relative"
         >
           <Image
             src={isUsdToIrr ? "/h-d.png" : "/h-r.png"}
             alt="currency"
             fill
             priority
-            className=" object-fill   !w-35 !h-35 mt-40 rounded-full "
+            className=" object-fill   !w-35 !h-35 mt-40 rounded-full  "
           />
         </motion.div>
       </AnimatePresence>
@@ -38,7 +38,7 @@ export default function ConverterImages({ direction }: Props) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -200, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="flex-1 relative"
+          className="relative"
         >
           <Image
             src={isUsdToIrr ? "/h-r.png" : "/h-d.png"}

@@ -70,26 +70,27 @@ export default function ConverterManual() {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: -30 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="absolute z-10 mx-auto max-w-md rounded-xl bg-black/40 backdrop-blur-md border border-gray-600 text-white p-6 shadow-2xl w-[90%] sm:w-[70%] md:w-[50%]"
+        className="absolute z-10 mx-auto max-w-md rounded-xl   backdrop-blur-md border border-gray-600 text-white p-6  w-[90%] sm:w-[70%] md:w-[50%] bg-[rgba(20,20,40,0.45)]  hover:shadow-[0_0_15px_rgba(0,191,255,0.4)]
+focus-within:shadow-[0_0_20px_rgba(255,0,255,0.3)] transition-all duration-300"
       >
-        <h2 className="mb-6 text-center text-2xl font-bold text-white">
+        <h2 className="mb-6 text-center text-2xl font-bold text-white ">
           مبدل دلار ↔ ریال
         </h2>
 
         <label className="mb-4 block">
-          <span className="mb-2 block text-sm font-medium text-white/90">نوع تبدیل</span>
+          <span className=" mb-2 block text-sm font-medium text-white/90 ">نوع تبدیل</span>
           <select
             value={direction}
             onChange={(e) => setDirection(e.target.value as ConversionDirection)}
-            className="w-full rounded-lg border border-gray-600 bg-gray-800/80 px-4 py-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
+            className="w-full rounded-lg border border-gray-600 bg-gray-900/80 px-3 py-3 items-center text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
           >
-            <option value="USD_TO_IRR">دلار به ریال</option>
-            <option value="IRR_TO_USD">ریال به دلار</option>
+            <option className="bg-[#5c4862] " value="USD_TO_IRR">دلار به ریال</option>
+            <option className="bg-[#5c4862] " value="IRR_TO_USD">ریال به دلار</option>
           </select>
         </label>
 
         <label className="mb-4 block">
-          <span className="mb-2 block text-sm font-medium text-white/90">
+          <span className="mb-2 block text-sm font-medium text-white/90 ">
             مقدار ({direction === "USD_TO_IRR" ? "دلار" : "ریال"})
           </span>
           <input
@@ -97,7 +98,7 @@ export default function ConverterManual() {
             inputMode="decimal"
             value={amount}
             onChange={handleAmountChange}
-            className="w-full rounded-lg border border-gray-600 bg-gray-800/80 px-4 py-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-left font-mono"
+            className="w-full rounded-lg border border-gray-600 bg-gray-900/80 px-4 py-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-left font-mono"
             placeholder="0"
             dir="ltr"
           />
@@ -112,7 +113,7 @@ export default function ConverterManual() {
             inputMode="decimal"
             value={rate}
             onChange={handleRateChange}
-            className="w-full rounded-lg border border-gray-600 bg-gray-800/80 px-4 py-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-left font-mono"
+            className="w-full rounded-lg border border-gray-600 bg-gray-900/80 px-4 py-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 text-left font-mono"
             placeholder="1,110,000"
             dir="ltr"
           />
