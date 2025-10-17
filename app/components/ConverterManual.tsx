@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { convertCurrency } from "../lib/convert";
 import type { ConversionDirection } from "../lib/types";
-import ConverterImages from "./ConverterImages";
 
 export default function ConverterManual() {
   const [direction, setDirection] = useState<ConversionDirection>("USD_TO_IRR");
@@ -60,7 +59,6 @@ export default function ConverterManual() {
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
    
-        <ConverterImages  direction={direction}  />
       
       
 
@@ -69,9 +67,8 @@ export default function ConverterManual() {
         initial={{ opacity: 0, scale: 0.95, y: 30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: -30 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="absolute z-10 mx-auto max-w-md rounded-xl   backdrop-blur-md border border-gray-600 text-white p-6  w-[90%] sm:w-[70%] md:w-[50%] bg-[rgba(20,20,40,0.45)]  hover:shadow-[0_0_15px_rgba(0,191,255,0.4)]
-focus-within:shadow-[0_0_20px_rgba(255,0,255,0.3)] transition-all duration-300"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="absolute z-10 mx-auto max-w-md rounded-xl   backdrop-blur-md border border-gray-600 text-white p-6  w-[90%] sm:w-[70%] md:w-[50%] bg-[rgba(20,20,40,0.45)]  hover:shadow-[0_0_15px_rgba(0,191,255,0.4)] focus-within:shadow-[0_0_20px_rgba(255,0,255,0.3)] hover:outline-violet-500 transition-all duration-300"
       >
         <h2 className="mb-6 text-center text-2xl font-bold text-white ">
           مبدل دلار ↔ ریال
